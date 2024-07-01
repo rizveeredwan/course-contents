@@ -10,7 +10,7 @@ class SendingThread extends Thread{
     }
     public void run(){
        try {
-        System.out.println("came"); 
+        ///System.out.println("came"); 
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true); // where to write and auto flush
         for(int i=1; i<=500; i++){
                 System.out.println("Server sending: Hello from server! " + i);
@@ -65,7 +65,6 @@ public class Server {
         SendingThread st = new SendingThread("Sending Server", socket);
         // listening thread 
         ListeningThread lt = new ListeningThread("Listening server", socket); 
-
         // closing 
         //socket.close();
         //serverSocket.close();

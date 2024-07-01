@@ -6,7 +6,7 @@ public class Server {
         ServerSocket serverSocket = new ServerSocket(12345); // Choose a port
         System.out.println("Server started. Waiting for client...");
 
-        Socket socket = serverSocket.accept();
+        Socket socket = serverSocket.accept(); // blocking call 
         System.out.println("Client connected.");
         PrintWriter out = new PrintWriter(socket.getOutputStream(), true); // where to write and auto flush 
         out.println("Hello from server!");

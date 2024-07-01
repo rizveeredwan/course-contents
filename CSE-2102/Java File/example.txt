@@ -1,0 +1,4 @@
+Basic file it is
+testing file reading
+data reading is complete
+bye bye
