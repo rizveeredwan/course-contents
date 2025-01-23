@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>HelloApplication.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+HelloApplication.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">hellofx</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">application</span><span class="s2">.</span><span class="s1">Application</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">fxml</span><span class="s2">.</span><span class="s1">FXMLLoader</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">Parent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">Scene</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">Font</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">stage</span><span class="s2">.</span><span class="s1">Stage</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">Text</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">shape</span><span class="s2">.*;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s1">IOException</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">HelloApplication </span><span class="s0">extends </span><span class="s1">Application </span><span class="s2">{</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">start</span><span class="s2">(</span><span class="s1">Stage stage</span><span class="s2">) </span><span class="s0">throws </span><span class="s1">IOException </span><span class="s2">{</span>
+
+        <span class="s3">//Parent root = FXMLLoader.load(getClass().getResource(&quot;scene1.fxml&quot;));</span>
+        <span class="s3">//Parent root = FXMLLoader.load(getClass().getResource(&quot;scene3.fxml&quot;));</span>
+        <span class="s1">Parent root </span><span class="s2">= </span><span class="s1">FXMLLoader</span><span class="s2">.</span><span class="s1">load</span><span class="s2">(</span><span class="s1">getClass</span><span class="s2">().</span><span class="s1">getResource</span><span class="s2">(</span><span class="s4">&quot;scene4.fxml&quot;</span><span class="s2">));</span>
+        <span class="s3">//Group root = new Group();</span>
+        <span class="s1">Scene scene </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scene</span><span class="s2">(</span><span class="s1">root</span><span class="s2">, </span><span class="s5">600</span><span class="s2">, </span><span class="s5">600</span><span class="s2">);</span>
+        <span class="s3">//Stage stage = new Stage();</span>
+
+        <span class="s3">//String css = getClass().getResource(&quot;E:\\CSEDU\\Courses\\CSE 2102 OOP\\Springboot\\demo\\HelloFx\\src\\main\\resources\\application.css&quot;).toExternalForm();</span>
+       <span class="s3">// scene.getStylesheets().add(getClass().getResource(&quot;/application.css&quot;).toExternalForm());</span>
+
+        <span class="s1">Text text </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Text</span><span class="s2">();</span>
+        <span class="s1">text</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Hello drawing shape&quot;</span><span class="s2">);</span>
+        <span class="s1">text</span><span class="s2">.</span><span class="s1">setX</span><span class="s2">(</span><span class="s5">100</span><span class="s2">);</span>
+        <span class="s1">text</span><span class="s2">.</span><span class="s1">setY</span><span class="s2">(</span><span class="s5">50</span><span class="s2">);</span>
+        <span class="s1">text</span><span class="s2">.</span><span class="s1">setFont</span><span class="s2">(</span><span class="s1">Font</span><span class="s2">.</span><span class="s1">font</span><span class="s2">(</span><span class="s4">&quot;Cambria&quot;</span><span class="s2">, </span><span class="s5">50</span><span class="s2">));</span>
+
+        <span class="s1">Line line </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Line</span><span class="s2">();</span>
+        <span class="s1">line</span><span class="s2">.</span><span class="s1">setStartX</span><span class="s2">(</span><span class="s5">300</span><span class="s2">);</span>
+        <span class="s1">line</span><span class="s2">.</span><span class="s1">setStartY</span><span class="s2">(</span><span class="s5">300</span><span class="s2">);</span>
+        <span class="s1">line</span><span class="s2">.</span><span class="s1">setEndX</span><span class="s2">(</span><span class="s5">450</span><span class="s2">);</span>
+        <span class="s1">line</span><span class="s2">.</span><span class="s1">setEndY</span><span class="s2">(</span><span class="s5">450</span><span class="s2">);</span>
+
+        <span class="s3">//root.getChildren().add(line);</span>
+        <span class="s3">//root.getChildren().add(text);</span>
+        <span class="s1">stage</span><span class="s2">.</span><span class="s1">setScene</span><span class="s2">(</span><span class="s1">scene</span><span class="s2">);</span>
+        <span class="s1">stage</span><span class="s2">.</span><span class="s1">show</span><span class="s2">();</span>
+
+        <span class="s3">/* 
+ 
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(&quot;hello-view.fxml&quot;)); 
+        //Image icon = new Image(&quot;resource/istockphoto-1363734940-612x612.jpg&quot;); 
+        Image icon = new Image(&quot;istockphoto-1363734940-612x612.jpg&quot;); 
+        Group root = new Group(); 
+        Scene scene = new Scene(root, 600, 600, Color.LIGHTBLUE); 
+        stage.setTitle(&quot;Hello!&quot;); 
+        Text t = new Text(); 
+        t.setText(&quot;Working fine&quot;); 
+        t.setX(50); 
+        t.setY(50); 
+        t.setFont(Font.font(&quot;Cambria&quot;, 50)); 
+        t.setFill(Color.PURPLE); 
+ 
+        Line line = new Line(); 
+        line.setStartX(200); 
+        line.setStartY(200); 
+ 
+        line.setEndX(200); 
+        line.setEndY(430); 
+ 
+        ImageView img = new ImageView(icon); 
+        img.setX(100); 
+        img.setY(150); 
+        img.setFitHeight(50); 
+ 
+        root.getChildren().add(t); // adding node ***** 
+        root.getChildren().add(line); 
+        root.getChildren().add(img); 
+        stage.getIcons().add(icon); 
+ 
+ 
+        stage.setScene(scene); 
+        stage.show(); // to show things */</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s1">launch</span><span class="s2">(</span><span class="s1">args</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

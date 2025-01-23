@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Scene4Controller.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Scene4Controller.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">hellofx</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">beans</span><span class="s2">.</span><span class="s1">value</span><span class="s2">.</span><span class="s1">ChangeListener</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">beans</span><span class="s2">.</span><span class="s1">value</span><span class="s2">.</span><span class="s1">ObservableValue</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">event</span><span class="s2">.</span><span class="s1">ActionEvent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">fxml</span><span class="s2">.</span><span class="s1">FXML</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">fxml</span><span class="s2">.</span><span class="s1">Initializable</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">CheckBox</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">net</span><span class="s2">.</span><span class="s1">URL</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">ResourceBundle</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Scene4Controller </span><span class="s0">implements </span><span class="s1">Initializable </span><span class="s2">{</span>
+        <span class="s1">@FXML</span>
+        <span class="s0">private </span><span class="s1">CheckBox on_box</span><span class="s2">;</span>
+        <span class="s1">@FXML</span>
+        <span class="s0">private </span><span class="s1">CheckBox off_box</span><span class="s2">;</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">initialize</span><span class="s2">(</span><span class="s1">URL url</span><span class="s2">, </span><span class="s1">ResourceBundle resourceBundle</span><span class="s2">) {</span>
+        <span class="s3">// during initialize it will be invoked</span>
+        <span class="s3">// 1: Method invoke</span>
+        <span class="s3">// Attach event handler to the CheckBox</span>
+        <span class="s3">// Attach listener to the selected property of CheckBox</span>
+        <span class="s3">//on.</span>
+        <span class="s1">on_box</span><span class="s2">.</span><span class="s1">setOnAction</span><span class="s2">(</span><span class="s1">event -&gt; check_on</span><span class="s2">(</span><span class="s1">event</span><span class="s2">));</span>
+        <span class="s3">// on.setOnAction(this::check_on); // Both are same definition</span>
+        <span class="s1">on_box</span><span class="s2">.</span><span class="s1">selectedProperty</span><span class="s2">().</span><span class="s1">addListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">ChangeListener</span><span class="s2">&lt;</span><span class="s1">Boolean</span><span class="s2">&gt;() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">changed</span><span class="s2">(</span><span class="s1">ObservableValue</span><span class="s2">&lt;? </span><span class="s0">extends </span><span class="s1">Boolean</span><span class="s2">&gt; </span><span class="s1">observableValue</span><span class="s2">, </span><span class="s1">Boolean oldValue</span><span class="s2">, </span><span class="s1">Boolean newValue</span><span class="s2">) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;On's value is changed &quot; </span><span class="s2">+ </span><span class="s1">on_box</span><span class="s2">.</span><span class="s1">isSelected</span><span class="s2">());</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+        <span class="s3">//off.setOnAction(event -&gt; check_off(event));</span>
+        <span class="s1">off_box</span><span class="s2">.</span><span class="s1">setOnAction</span><span class="s2">(</span><span class="s1">actionEvent -&gt; check_off</span><span class="s2">(</span><span class="s1">actionEvent</span><span class="s2">)); </span><span class="s3">//Both are same definition</span>
+        <span class="s1">off_box</span><span class="s2">.</span><span class="s1">selectedProperty</span><span class="s2">().</span><span class="s1">addListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">ChangeListener</span><span class="s2">&lt;</span><span class="s1">Boolean</span><span class="s2">&gt;() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">changed</span><span class="s2">(</span><span class="s1">ObservableValue</span><span class="s2">&lt;? </span><span class="s0">extends </span><span class="s1">Boolean</span><span class="s2">&gt; </span><span class="s1">observableValue</span><span class="s2">, </span><span class="s1">Boolean oldValue</span><span class="s2">, </span><span class="s1">Boolean newValue</span><span class="s2">) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Off's value is changed &quot; </span><span class="s2">+ </span><span class="s1">off_box</span><span class="s2">.</span><span class="s1">isSelected</span><span class="s2">());</span>
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">check_on</span><span class="s2">(</span><span class="s1">ActionEvent e</span><span class="s2">){</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;I have pressed the check_on&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s0">public void </span><span class="s1">check_off</span><span class="s2">(</span><span class="s1">ActionEvent e</span><span class="s2">){</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;I have pressed the check_off&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

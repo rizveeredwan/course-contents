@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hellofx.Scene3Controller">
+   <children>
+      <ImageView fx:id="image_view" fitHeight="265.0" fitWidth="444.0" layoutX="78.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/tom_image.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="press_button" layoutX="259.0" layoutY="320.0" mnemonicParsing="false" onAction="#onPressButton" text="Press" />
+   </children>
+</AnchorPane>

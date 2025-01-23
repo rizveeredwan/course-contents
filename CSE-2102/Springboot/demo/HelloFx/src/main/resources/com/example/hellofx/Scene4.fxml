@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hellofx.Scene4Controller">
+   <children>
+      <CheckBox fx:id="on_box" layoutX="100.0" layoutY="75.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="159.0" text="On" />
+      <CheckBox fx:id="off_box" layoutX="280.0" layoutY="75.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="159.0" text="Off" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Scene2Controller.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Scene2Controller.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">hellofx</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">event</span><span class="s2">.</span><span class="s1">ActionEvent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">fxml</span><span class="s2">.</span><span class="s1">FXML</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">fxml</span><span class="s2">.</span><span class="s1">FXMLLoader</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">Node</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">Parent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">Scene</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">Label</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">stage</span><span class="s2">.</span><span class="s1">Stage</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s1">IOException</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Scene2Controller </span><span class="s2">{</span>
+    <span class="s1">@FXML</span>
+    <span class="s0">protected </span><span class="s1">Label name_label</span><span class="s2">;</span>
+    <span class="s1">@FXML</span>
+    <span class="s0">public void </span><span class="s1">displayName</span><span class="s2">(</span><span class="s1">String name</span><span class="s2">){</span>
+        <span class="s1">name_label</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void  </span><span class="s1">onButtonPress2</span><span class="s2">(</span><span class="s1">ActionEvent e</span><span class="s2">) </span><span class="s0">throws </span><span class="s1">IOException </span><span class="s2">{</span>
+        <span class="s3">// Initiating the loader from the scene2.fxml</span>
+        <span class="s1">FXMLLoader loader </span><span class="s2">= </span><span class="s0">new </span><span class="s1">FXMLLoader</span><span class="s2">(</span><span class="s1">getClass</span><span class="s2">().</span><span class="s1">getResource</span><span class="s2">(</span><span class="s4">&quot;scene1.fxml&quot;</span><span class="s2">));</span>
+        <span class="s3">// loading all the hierarchies</span>
+        <span class="s1">Parent root </span><span class="s2">= </span><span class="s1">loader</span><span class="s2">.</span><span class="s1">load</span><span class="s2">();</span>
+        <span class="s1">Stage stage </span><span class="s2">= (</span><span class="s1">Stage</span><span class="s2">) ((</span><span class="s1">Node</span><span class="s2">) </span><span class="s1">e</span><span class="s2">.</span><span class="s1">getSource</span><span class="s2">()).</span><span class="s1">getScene</span><span class="s2">().</span><span class="s1">getWindow</span><span class="s2">();</span>
+        <span class="s1">Scene scene </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scene</span><span class="s2">(</span><span class="s1">root</span><span class="s2">);</span>
+        <span class="s1">stage</span><span class="s2">.</span><span class="s1">setScene</span><span class="s2">(</span><span class="s1">scene</span><span class="s2">);</span>
+        <span class="s1">stage</span><span class="s2">.</span><span class="s1">show</span><span class="s2">();</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
