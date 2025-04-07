@@ -147,7 +147,7 @@ public class JavaDS{
        // l.pop(); // remove vs poll 
        ListIterator<String> lt = l.listIterator(); 
        while(lt.hasNext()){ // vs hasPrevious 
-        System.out.println(lt.next()); // lt.previou
+        System.out.println(lt.next()); // lt.previous
        }
        for(int i=0; i<l.size(); i++){
         System.out.println(l.get(i));
